@@ -17,7 +17,7 @@ install:
 #  - sleep 3
 
 before_script:
-  - install-webdrivers --path webdrivers
+  - install-webdrivers/geckodriver --path webdrivers/geckodriver
 
 branches:
   only:
