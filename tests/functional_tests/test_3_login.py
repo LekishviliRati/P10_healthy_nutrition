@@ -14,7 +14,7 @@ class LoginTest(unittest.TestCase):
 
     def test_login(self):
         # Check if Django is working
-        self.browser.get('http://localhost:8000')
+        self.browser.get('localhost')
         self.browser.maximize_window()
         self.assertIn('Pur Beurre', self.browser.title)
         time.sleep(3)

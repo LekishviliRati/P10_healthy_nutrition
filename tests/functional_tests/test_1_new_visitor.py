@@ -15,7 +15,7 @@ class NewVisitorTest(unittest.TestCase):
     def test_new_visitor_path(self):
 
         # # Check if Django is working
-        self.browser.get('http://localhost:8000')
+        self.browser.get('localhost')
         self.browser.maximize_window()
         self.assertIn('Pur Beurre', self.browser.title)
 
