@@ -3,7 +3,7 @@ python:
   - '3.9'
 
 install:
-  -pip install -r requirements.txt
+  - pip install -r requirements.txt
 
 branches:
   only:
@@ -12,7 +12,7 @@ branches:
 env: DJANGO_SETTINGS_MODULE="better_nutrition.settings.travis"
 
 services:
-  -postgresql
+  - postgresql
 
 script:
-  -./manage.py test
+  - ./manage.py test
