@@ -9,7 +9,7 @@ install:
   - pip install -r requirements.txt
 
 before_script:
-  - install-gecko_driver --path gecko_driver
+  - install-webdrivers --path webdrivers
 
 branches:
   only:
