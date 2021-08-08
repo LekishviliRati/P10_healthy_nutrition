@@ -8,6 +8,9 @@ addons:
 install:
   - pip install -r requirements.txt
 
+before_script:
+  - install-gecko_driver --path gecko_driver
+
 branches:
   only:
     - master
