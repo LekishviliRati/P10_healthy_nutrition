@@ -1,0 +1,18 @@
+language: python
+python:
+	- '3.9'
+
+before_script:
+	-pip install -r requirements.txt
+
+branches:
+  only:
+    - master
+
+env: DJANGO_SETTINGS_MODULE="better_nutrition.settings.travis"
+
+services:
+	-postgresql
+
+script:
+	-./manage.py test
