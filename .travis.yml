@@ -1,9 +1,9 @@
 language: python
 python:
-	- '3.9'
+- '3.9'
 
 before_script:
-	-pip install -r requirements.txt
+-pip install -r requirements.txt
 
 branches:
   only:
@@ -12,7 +12,7 @@ branches:
 env: DJANGO_SETTINGS_MODULE="better_nutrition.settings.travis"
 
 services:
-	-postgresql
+-postgresql
 
 script:
-	-./manage.py test
+-./manage.py test
