@@ -18,7 +18,7 @@ class RegistrationTest(unittest.TestCase):
     #
     # **********
     def setUp(self):
-        geckodriver = str(BASE_DIR / "webdrivers" / "geckodriver.zip")
+        geckodriver = str(BASE_DIR / "webdrivers" / "geckodriver")
         self.browser = webdriver.Firefox(
             executable_path=geckodriver, options=firefox_options
         )
