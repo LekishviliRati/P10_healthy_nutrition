@@ -17,7 +17,7 @@ class LoginTest(unittest.TestCase):
 
     # **********
     def setUp(self):
-        geckodriver = str(BASE_DIR / "webdrivers" / "geckodriver")
+        geckodriver = str(BASE_DIR / "webdrivers" / "geckodriver.zip")
         self.browser = webdriver.Firefox(
             executable_path=geckodriver, options=firefox_options
         )
