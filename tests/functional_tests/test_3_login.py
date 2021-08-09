@@ -2,12 +2,26 @@ import unittest
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+# **********
+from better_nutrition.settings import BASE_DIR
+
+firefox_options = webdriver.FirefoxOptions()
+firefox_options.headless = True
+# **********
 
 
 class LoginTest(unittest.TestCase):
 
+    # def setUp(self):
+    #     self.browser = webdriver.Firefox()
+
+    # **********
     def setUp(self):
-        self.browser = webdriver.Firefox()
+        geckodriver = str(BASE_DIR / "webdrivers" / "geckodriver")
+        self.browser = webdriver.Firefox(
+            executable_path=geckodriver, options=firefox_options
+        )
+    # **********
 
     def tearDown(self):
         self.browser.quit()
