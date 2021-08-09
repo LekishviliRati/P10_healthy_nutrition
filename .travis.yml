@@ -17,6 +17,7 @@ before_script:
   - 'export DISPLAY=:99.0'
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
   - sleep 3
+  - ./manage.py runserver
 
 branches:
   only:
@@ -28,5 +29,5 @@ services:
   - postgresql
 
 script:
-  - ./manage.py runserver
+
   - ./manage.py test
