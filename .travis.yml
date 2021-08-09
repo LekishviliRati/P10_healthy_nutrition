@@ -15,13 +15,12 @@ install:
   - pip install tchappui-webdrivers
 
 before_script:
-  - install-webdrivers --path /usr/local/bin/
-#  - wget "https://github.com/mozilla/geckodriver/releases/download/v0.29.1/geckodriver-v0.29.1-linux64.tar.gz"
-#  - tar xfz geckodriver-v0.29.1-linux64.tar.gz
-#  - sudo mv geckodriver /usr/local/bin
-#  - 'export DISPLAY=:99.0'
-#  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-#  - sleep 3
+  - wget "https://github.com/mozilla/geckodriver/releases/download/v0.29.1/geckodriver-v0.29.1-linux64.tar.gz"
+  - tar xfz geckodriver-v0.29.1-linux64.tar.gz
+  - sudo mv geckodriver /usr/local/bin
+  - 'export DISPLAY=:99.0'
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+  - sleep 3
 
 branches:
   only:
