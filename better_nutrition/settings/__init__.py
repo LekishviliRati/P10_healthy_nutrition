@@ -26,7 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = 'django-insecure-u2zc5rx%p6rvf6ds-&d_)1%un)^s+1pou!@=*ilh!@*5rbldpd'
 DEBUG = True
 
-ALLOWED_HOSTS = ['165.22.66.94']
+ALLOWED_HOSTS = ['165.22.66.94',
+                 'localhost',
+                 '127.0.0.1',
+                 'betternutrition.herokuapp.com']
 
 
 # Application definition
