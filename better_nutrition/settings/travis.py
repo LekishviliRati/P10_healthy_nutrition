@@ -8,7 +8,7 @@ SECRET_KEY = "travis_secret_key"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "",
+        "NAME": "better_nutrition",
         "USER": "postgres",
         "PASSWORD": "",
         "HOST": "",
