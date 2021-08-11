@@ -14,7 +14,6 @@ before_script:
   - sudo mv geckodriver /usr/local/bin
   - 'export DISPLAY=:99.0'
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-#  - Xvfb :99 -screen 0 1280x1024x16 > /dev/null 2>&1 &
   - sleep 3
   - python manage.py runserver &
 
@@ -22,7 +21,9 @@ branches:
   only:
     - master
 
-env: DJANGO_SETTINGS_MODULE="better_nutrition.settings.travis"
+env:
+  global:
+    - DJANGO_SETTINGS_MODULE="purbeurre.settings.travis"
 
 services:
   - postgresql

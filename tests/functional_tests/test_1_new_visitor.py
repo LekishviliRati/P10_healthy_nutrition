@@ -53,7 +53,7 @@ class NewVisitorTest(unittest.TestCase):
         # Visitor type "Nutella" in search box
         main_input_box.send_keys('Nutella')
         main_input_box.send_keys(Keys.ENTER)
-        time.sleep(3)
+        time.sleep(10)
 
         # Check if Visitor succeed to reach products list page.
         products_list = self.browser.find_element_by_id('products_list')
