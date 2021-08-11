@@ -2,6 +2,9 @@ import unittest
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 # **********
 from better_nutrition.settings import BASE_DIR
@@ -36,7 +39,9 @@ class NewVisitorTest(unittest.TestCase):
 
         # Visitor can search a product from navigation bar
         # or from page main search bar
-        nav_input_box = self.browser.find_element_by_id('nav_input_base')
+        # nav_input_box = self.browser.find_element_by_id('nav_input_base')
+        nav_input_box = WebDriverWait(self.browser, 1000000).until(
+            EC.element_to_be_clickable((By.ID, 'nav_input_base'))).click()
         main_input_box = self.browser.find_element_by_id('nav_input_home')
         self.assertEqual(nav_input_box.get_attribute
                          ('placeholder'), 'Chercher')
