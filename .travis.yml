@@ -13,8 +13,8 @@ before_script:
   - tar xfz geckodriver-v0.29.1-linux64.tar.gz
   - sudo mv geckodriver /usr/local/bin
   - 'export DISPLAY=:99.0'
-#  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-  - Xvfb :99 -screen 0 1280x1024x16 > /dev/null 2>&1 &
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+#  - Xvfb :99 -screen 0 1280x1024x16 > /dev/null 2>&1 &
   - sleep 3
   - python manage.py runserver &
 
