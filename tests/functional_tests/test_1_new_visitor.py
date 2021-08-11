@@ -6,22 +6,22 @@ from selenium.webdriver.common.keys import Keys
 # **********
 from better_nutrition.settings import BASE_DIR
 
-firefox_options = webdriver.FirefoxOptions()
-firefox_options.headless = True
+# firefox_options = webdriver.FirefoxOptions()
+# firefox_options.headless = True
 # **********
 
 
 class NewVisitorTest(unittest.TestCase):
 
-    # def setUp(self):
-    #     self.browser = webdriver.Firefox()
+    def setUp(self):
+        self.browser = webdriver.Firefox()
 
     # **********
-    def setUp(self):
-        geckodriver = str(BASE_DIR / "webdrivers" / "geckodriver")
-        self.browser = webdriver.Firefox(
-            executable_path=geckodriver, options=firefox_options
-        )
+    # def setUp(self):
+    #     geckodriver = str(BASE_DIR / "webdrivers" / "geckodriver")
+    #     self.browser = webdriver.Firefox(
+    #         executable_path=geckodriver, options=firefox_options
+    #     )
     # **********
 
     def tearDown(self):
@@ -31,7 +31,7 @@ class NewVisitorTest(unittest.TestCase):
 
         # # Check if Django is working
         self.browser.get('http://localhost:8000')
-        # self.browser.maximize_window()
+        self.browser.maximize_window()
         self.assertIn('Pur Beurre', self.browser.title)
 
         # Visitor can search a product from navigation bar
