@@ -40,8 +40,8 @@ class NewVisitorTest(unittest.TestCase):
         # Visitor can search a product from navigation bar
         # or from page main search bar
         # nav_input_box = self.browser.find_element_by_id('nav_input_base')
-        nav_input_box = WebDriverWait(self.browser, 1000000).until(
-            EC.element_to_be_clickable((By.ID, 'nav_input_base'))).click()
+        nav_input_box = WebDriverWait(self.browser, 10).until(
+            EC.presence_of_element_located((By.ID, 'nav_input_base')))
         main_input_box = self.browser.find_element_by_id('nav_input_home')
         self.assertEqual(nav_input_box.get_attribute
                          ('placeholder'), 'Chercher')
