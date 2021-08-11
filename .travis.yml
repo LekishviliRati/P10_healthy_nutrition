@@ -27,5 +27,4 @@ services:
   - postgresql
 
 script:
-  - python manage.py collectstatic
   - python manage.py test
