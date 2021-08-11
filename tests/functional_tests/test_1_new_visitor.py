@@ -55,10 +55,10 @@ class NewVisitorTest(unittest.TestCase):
         nav_input_box.send_keys(Keys.ENTER)
         time.sleep(3)
 
-        # Check if Visitor succeed to reach products list page.
-        products_list = self.browser.find_element_by_id('products_list')
-        self.assertTrue(products_list)
-        time.sleep(3)
+        # # Check if Visitor succeed to reach products list page.
+        # products_list = self.browser.find_element_by_id('products_list')
+        # self.assertTrue(products_list)
+        # time.sleep(3)
 
         # Check if visitor can access to a product page
         product_page = \
