@@ -2,6 +2,9 @@ import unittest
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 # **********
 from better_nutrition.settings import BASE_DIR
@@ -35,8 +38,12 @@ class RegistrationTest(unittest.TestCase):
         time.sleep(3)
 
         # Check if Visitor succeed to reach login page.
-        registration_page = self.browser.find_element_by_id('Inscription')
-        registration_page.click()
+        # registration_page = self.browser.find_element_by_id('Inscription')
+        wait = WebDriverWait(self.browser, 10)
+        element = wait.until(EC.element_to_be_clickable((By.ID, 'Inscription')))
+        element.click()
+
+        # registration_page.click()
         time.sleep(3)
 
         # Fill connexion fields and enter
