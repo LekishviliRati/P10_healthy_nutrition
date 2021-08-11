@@ -6,22 +6,22 @@ from selenium.webdriver.common.keys import Keys
 # **********
 from better_nutrition.settings import BASE_DIR
 
-firefox_options = webdriver.FirefoxOptions()
-firefox_options.headless = True
+# firefox_options = webdriver.FirefoxOptions()
+# firefox_options.headless = True
 # **********
 
 
 class RegistrationTest(unittest.TestCase):
 
-    # def setUp(self):
-    #     self.browser = webdriver.Firefox()
-    #
-    # **********
     def setUp(self):
-        geckodriver = str(BASE_DIR / "webdrivers" / "geckodriver")
-        self.browser = webdriver.Firefox(
-            executable_path=geckodriver, options=firefox_options
-        )
+        self.browser = webdriver.Firefox()
+
+    # **********
+    # def setUp(self):
+    #     geckodriver = str(BASE_DIR / "webdrivers" / "geckodriver")
+    #     self.browser = webdriver.Firefox(
+    #         executable_path=geckodriver, options=firefox_options
+    #     )
     # **********
 
     def tearDown(self):
