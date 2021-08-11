@@ -34,8 +34,8 @@ class NewVisitorTest(unittest.TestCase):
 
         # # Check if Django is working
         self.browser.get('http://localhost:8000')
-        self.browser.set_window_size(1024, 768)
-        # self.browser.maximize_window()
+        # self.browser.set_window_size(1024, 768)
+        self.browser.maximize_window()
         self.assertIn('Pur Beurre', self.browser.title)
 
         # Visitor can search a product from navigation bar
