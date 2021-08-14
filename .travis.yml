@@ -31,6 +31,7 @@ before_script:
 #  - export PATH=$PATH:/usr/local/bin
 #  - export PATH=$PATH:/usr/local/bin/geckodriver
   - psql -c 'create database travis_ci_test;' -U postgres
+  - python manage.py migrate
 
 
 branches:
