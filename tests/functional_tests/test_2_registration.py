@@ -1,31 +1,17 @@
 import unittest
 import time
 from selenium import webdriver
+from selenium.webdriver import FirefoxOptions
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
 
-# **********
-from better_nutrition.settings import BASE_DIR
-
-# firefox_options = webdriver.FirefoxOptions()
-# firefox_options.headless = True
-# **********
+opts = FirefoxOptions()
+opts.add_argument("--headless")
 
 
 class RegistrationTest(unittest.TestCase):
 
     def setUp(self):
-        self.browser = webdriver.Firefox()
-
-    # **********
-    # def setUp(self):
-    #     geckodriver = str(BASE_DIR / "webdrivers" / "geckodriver")
-    #     self.browser = webdriver.Firefox(
-    #         executable_path=geckodriver, options=firefox_options
-    #     )
-    # **********
+        self.browser = webdriver.Firefox(firefox_options=opts)
 
     def tearDown(self):
         self.browser.quit()
@@ -33,7 +19,6 @@ class RegistrationTest(unittest.TestCase):
     def test_registration(self):
         # Check if Django is working
         self.browser.get('http://localhost:8000')
-        # self.browser.set_window_size(1024, 768)
         self.browser.maximize_window()
         self.assertIn('Pur Beurre', self.browser.title)
         time.sleep(3)
