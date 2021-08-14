@@ -22,11 +22,10 @@ class NewVisitorTest(unittest.TestCase):
 
     # **********
     def setUp(self):
-        geckodriver = "usr" / "local" / "bin" / "geckodriver"
+        geckodriver = str(BASE_DIR / "webdrivers" / "geckodriver")
         self.browser = webdriver.Firefox(
-            executable_path="usr"/"local"/"bin"/"geckodriver"
+            executable_path=geckodriver
         )
-
     # **********
 
     def tearDown(self):
