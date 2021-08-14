@@ -27,6 +27,8 @@ before_script:
 #  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
 #  - sleep 3
 #  - python manage.py runserver &
+  - export PATH=$PATH:/usr/local/bin
+  - export PATH=$PATH:/usr/local/bin/geckodriver
 
 
 branches:

@@ -17,15 +17,15 @@ from better_nutrition.settings import BASE_DIR
 
 class NewVisitorTest(unittest.TestCase):
 
-    # def setUp(self):
-    #     self.browser = webdriver.Firefox()
+    def setUp(self):
+        self.browser = webdriver.Firefox()
 
     # # **********
-    def setUp(self):
-        geckodriver = str(BASE_DIR / "usr" / "local" / "bin" / "geckodriver")
-        self.browser = webdriver.Firefox(
-            executable_path=geckodriver
-        )
+    # def setUp(self):
+    #     geckodriver = str(BASE_DIR / "usr" / "local" / "bin" / "geckodriver")
+    #     self.browser = webdriver.Firefox(
+    #         executable_path=geckodriver
+    #     )
     # # **********
 
     def tearDown(self):
