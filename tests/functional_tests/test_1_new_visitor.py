@@ -1,6 +1,7 @@
 import unittest
 import time
 from selenium import webdriver
+from selenium.webdriver import FirefoxOptions
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
@@ -14,18 +15,24 @@ from better_nutrition.settings import BASE_DIR
 # firefox_options.headless = True
 # **********
 
+opts = FirefoxOptions()
+opts.add_argument("--headless")
+
 
 class NewVisitorTest(unittest.TestCase):
 
     def setUp(self):
+        self.browser = webdriver.Firefox(firefox_options=opts)
+
+    # def setUp(self):
     #     self.browser = webdriver.Firefox()
 
     # # **********
     # def setUp(self):
-        geckodriver = str(BASE_DIR / "usr" / "local" / "bin" / "geckodriver")
-        self.browser = webdriver.Firefox(
-            executable_path=geckodriver
-        )
+    #     geckodriver = str(BASE_DIR / "usr" / "local" / "bin" / "geckodriver")
+    #     self.browser = webdriver.Firefox(
+    #         executable_path=geckodriver
+    #     )
     # # **********
 
     def tearDown(self):
