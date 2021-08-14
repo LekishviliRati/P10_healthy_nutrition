@@ -12,6 +12,7 @@ install:
   - sudo mv -f ~/geckodriver /usr/local/share
   - sudo chmod +x /usr/local/share/geckodriver
   - sudo ln -s /usr/local/share/geckodriver /usr/local/bin/geckodriver
+  - sleep 3
   - pip install -r requirements.txt
 #  - pip install tchappui-webdrivers
 
