@@ -1,9 +1,5 @@
-import os
-
 from . import *
 
-
-SECRET_KEY = "travis_secret_key"
 
 DATABASES = {
     "default": {
