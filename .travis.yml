@@ -5,6 +5,7 @@ python:
 addons:
   firefox: latest
 
+
 install:
   - wget -N https://github.com/mozilla/geckodriver/releases/download/v0.29.1/geckodriver-v0.29.1-linux64.tar.gz -P ~/
   - tar -xzf ~/geckodriver-v0.29.1-linux64.tar.gz -C ~/
@@ -27,8 +28,9 @@ before_script:
 #  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
 #  - sleep 3
   - python manage.py runserver &
-  - export PATH=$PATH:/usr/local/bin
-  - export PATH=$PATH:/usr/local/bin/geckodriver
+#  - export PATH=$PATH:/usr/local/bin
+#  - export PATH=$PATH:/usr/local/bin/geckodriver
+  - psql -c 'create database travis_ci_test;' -U postgres
 
 
 branches:
