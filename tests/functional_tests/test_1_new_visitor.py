@@ -9,6 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 # **********
 from better_nutrition.settings import BASE_DIR
 
+
 # firefox_options = webdriver.FirefoxOptions()
 # firefox_options.headless = True
 # **********
@@ -16,22 +17,22 @@ from better_nutrition.settings import BASE_DIR
 
 class NewVisitorTest(unittest.TestCase):
 
-    def setUp(self):
-        self.browser = webdriver.Firefox()
+    # def setUp(self):
+    #     self.browser = webdriver.Firefox()
 
     # **********
-    # def setUp(self):
-    #     geckodriver = str(BASE_DIR / "webdrivers" / "geckodriver")
-    #     self.browser = webdriver.Firefox(
-    #         executable_path=geckodriver, options=firefox_options
-    #     )
+    def setUp(self):
+        geckodriver = str("usr" / "local" / "bin" / "geckodriver")
+        self.browser = webdriver.Firefox(
+            executable_path=geckodriver
+        )
+
     # **********
 
     def tearDown(self):
         self.browser.quit()
 
     def test_new_visitor_path(self):
-
         # # Check if Django is working
         self.browser.get('http://localhost:8000')
         # self.browser.set_window_size(1024, 768)
