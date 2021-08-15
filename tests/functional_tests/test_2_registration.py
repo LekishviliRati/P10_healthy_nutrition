@@ -25,9 +25,6 @@ class RegistrationTest(unittest.TestCase):
 
         # Check if Visitor succeed to reach login page.
         registration_page = self.browser.find_element_by_id('Inscription')
-        # wait = WebDriverWait(self.browser, 10)
-        # element = wait.until(EC.element_to_be_clickable((By.ID, 'Inscription')))
-        # element.click()
 
         registration_page.click()
         time.sleep(3)

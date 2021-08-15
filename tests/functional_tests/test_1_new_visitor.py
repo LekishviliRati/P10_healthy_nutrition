@@ -18,9 +18,8 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.quit()
 
     def test_new_visitor_path(self):
-        # # Check if Django is working
+        # Check if Django is working
         self.browser.get('http://localhost:8000')
-        # self.browser.set_window_size(1024, 768)
         self.browser.maximize_window()
         self.assertIn('Pur Beurre', self.browser.title)
 
@@ -28,8 +27,7 @@ class NewVisitorTest(unittest.TestCase):
         # or from page main search bar
         main_input_box = self.browser.find_element_by_id('nav_input_home')
         nav_input_box = self.browser.find_element_by_id('nav_input_base')
-        # nav_input_box = WebDriverWait(self.browser, 10).until(
-        #     EC.presence_of_element_located((By.ID, 'nav_input_base')))
+
         self.assertEqual(nav_input_box.get_attribute
                          ('placeholder'), 'Chercher')
         self.assertEqual(main_input_box.get_attribute
