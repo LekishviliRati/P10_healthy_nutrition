@@ -3,7 +3,8 @@ better_nutrition/settings/production.py
 # Mac
 .DS_Store
 
-# Specific to P8
+# Specific to P10
+better_nutrition/settings/.env
 .coverage
 .coveragerc
 .idea
